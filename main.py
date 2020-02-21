@@ -8,14 +8,12 @@ from pyecharts.charts import Map, Page
 """
 
 第一步：数据获取
-使用爬虫（requests+BeautifulSoup），从丁香园网站上爬取。
+使用爬虫（requests），从丁香园网站上爬取。
 
 """
 
+# requests会自动访问给定的连接并获取网页的内容。
 r = requests.get('https://ncov.dxy.cn/ncovh5/view/pneumonia')
-r.encoding = 'utf-8'
-soup = BeautifulSoup(r.text, 'html.parser')
-area_stat_raw = soup.find(id='getAreaStat').get_text()
 
 """
 
@@ -24,6 +22,9 @@ area_stat_raw = soup.find(id='getAreaStat').get_text()
 
 """
 
+r.encoding = 'utf-8'
+soup = BeautifulSoup(r.text, 'html.parser')
+area_stat_raw = soup.find(id='getAreaStat').get_text()
 area_stat_js = area_stat_raw[len('try { window.getAreaStat = '): -len('}catch(e){}')]
 area_stat = json.loads(area_stat_js)
 
@@ -57,20 +58,17 @@ page = Page(page_title='iDesignLab')
 # 省级现存确诊
 chart = Map(init_opts=opts.InitOpts(width='1500px', height='800px'))
 chart.add('现存确诊', [list(z) for z in zip(province_name, p_current_confirmed_count)], 'china')
-chart.set_global_opts(
-    toolbox_opts=opts.ToolboxOpts(is_show=True, pos_top='20px'),
-    title_opts=opts.TitleOpts(title='2019-nCoV疫情地图：{}（{}）'.format('现存确诊', time.asctime()), pos_left='center',
-                              pos_top='20px'),
-    legend_opts=opts.LegendOpts(is_show=False),
-    visualmap_opts=opts.VisualMapOpts(
-        is_piecewise=True,
-        pieces=[
-            {'min': 10000},
-            {'min': 500, 'max': 9999},
-            {'min': 100, 'max': 499},
-            {'min': 10, 'max': 99},
-            {'min': 1, 'max': 9},
-            {'max': 0}]))
+chart.set_global_opts(toolbox_opts=opts.ToolboxOpts(is_show=True, pos_top='20px'),
+                      title_opts=opts.TitleOpts(title='2019-nCoV疫情地图：{}（{}）'.format('现存确诊', time.asctime()),
+                                                pos_left='center', pos_top='20px'),
+                      legend_opts=opts.LegendOpts(is_show=False),
+                      visualmap_opts=opts.VisualMapOpts(is_piecewise=True,
+                                                        pieces=[{'min': 10000},
+                                                                {'min': 500, 'max': 9999},
+                                                                {'min': 100, 'max': 499},
+                                                                {'min': 10, 'max': 99},
+                                                                {'min': 1, 'max': 9},
+                                                                {'value': 0, 'color': 'white'}]))
 page.add(chart)
 
 # 省级累计确诊
@@ -89,7 +87,7 @@ chart.set_global_opts(
             {'min': 100, 'max': 499},
             {'min': 10, 'max': 99},
             {'min': 1, 'max': 9},
-            {'max': 0}]))
+            {'value': 0, 'color':'white'}]))
 page.add(chart)
 
 # 上海市累计确诊
