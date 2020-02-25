@@ -17,15 +17,9 @@ Data acquisition, cleaning, and visualization are based on the packages of [requ
 |ppt/  | 项目详细说明 | Project Detailed Illustration|
 
 ### 成果 Results
-[Html 格式](render.html) (推荐)  
-[Html Format](render.html) (Recommend)
 
-PNG格式:  
-PNG Format:  
+![alt country confirmed](png/Cumulative Diagnosis.png)
 
-![alt country confirmed](png/Cumulative Diagnosis.png)    
-
-![alt country current confirmed](png/Current Diagnosis.png)   
+![alt country current confirmed](png/Current Diagnosis.png)
 
 ![alt shanghai confirmed](png/Cumulative Diagnosis Shanghai.png)
-   
