@@ -18,8 +18,8 @@ Data acquisition, cleaning, and visualization are based on the packages of [requ
 
 ### 成果 Results
 
-![alt country confirmed](png/Cumulative Diagnosis.png)
+![alt country confirmed](png/Cumulative%20Diagnosis.png)
 
-![alt country current confirmed](png/Current Diagnosis.png)
+![alt country current confirmed](png/Current%20Diagnosis.png)
 
-![alt shanghai confirmed](png/Cumulative Diagnosis Shanghai.png)
+![alt shanghai confirmed](png/Cumulative%20Diagnosis%20Shanghai.png)
