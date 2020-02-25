@@ -21,4 +21,4 @@ Data acquisition, cleaning, and visualization are based on the packages of [requ
 
 ![alt country current confirmed](png/current_confirmed_counts.png)   
 
-![alt shanghai confirmed](png/current_confirmed_counts.png)   
+![alt shanghai confirmed](png/confirmed_counts_shanghai.png)   
