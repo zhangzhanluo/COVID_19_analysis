@@ -60,6 +60,9 @@ chart = Map(init_opts=opts.InitOpts(width='1500px', height='800px'))
 chart.add('现存确诊', [list(z) for z in zip(province_name, p_current_confirmed_count)], 'china')
 chart.set_global_opts(toolbox_opts=opts.ToolboxOpts(is_show=True, pos_top='20px'),
                       title_opts=opts.TitleOpts(title='2019-nCoV疫情地图：{}（{}）'.format('现存确诊', time.asctime()),
+                                                subtitle='2019-nCoV Map：{}（{}）'.format('Current Diagnosis',
+                                                                                       time.asctime()),
+                                                subtitle_textstyle_opts=opts.TextStyleOpts(font_size=15),
                                                 pos_left='center', pos_top='20px'),
                       legend_opts=opts.LegendOpts(is_show=False),
                       visualmap_opts=opts.VisualMapOpts(is_piecewise=True,
@@ -77,6 +80,8 @@ chart.add('累计确诊', [list(z) for z in zip(province_name, p_confirmed_count
 chart.set_global_opts(
     toolbox_opts=opts.ToolboxOpts(is_show=True, pos_top='20px'),
     title_opts=opts.TitleOpts(title='2019-nCoV疫情地图：{}（{}）'.format('累计确诊', time.asctime()), pos_left='center',
+                              subtitle='2019-nCoV Map：{}（{}）'.format('Cumulative Diagnosis', time.asctime()),
+                              subtitle_textstyle_opts=opts.TextStyleOpts(font_size=15),
                               pos_top='20px'),
     legend_opts=opts.LegendOpts(is_show=False),
     visualmap_opts=opts.VisualMapOpts(
@@ -87,7 +92,7 @@ chart.set_global_opts(
             {'min': 100, 'max': 499},
             {'min': 10, 'max': 99},
             {'min': 1, 'max': 9},
-            {'value': 0, 'color':'white'}]))
+            {'value': 0, 'color': 'white'}]))
 page.add(chart)
 
 # 上海市累计确诊
@@ -97,6 +102,8 @@ chart.set_series_opts(label_opts=opts.LabelOpts(is_show=False))
 chart.set_global_opts(
     toolbox_opts=opts.ToolboxOpts(is_show=True, pos_top='20px'),
     title_opts=opts.TitleOpts(title='2019-nCoV疫情地图：{}（{}）'.format('累计确诊', '上海市，' + time.asctime()), pos_left='center',
+                              subtitle='2019-nCoV Map：{}（{}）'.format('Cumulative Diagnosis', 'Shanghai, ' + time.asctime()),
+                              subtitle_textstyle_opts=opts.TextStyleOpts(font_size=15),
                               pos_top='20px'),
     legend_opts=opts.LegendOpts(is_show=False),
     visualmap_opts=opts.VisualMapOpts(
