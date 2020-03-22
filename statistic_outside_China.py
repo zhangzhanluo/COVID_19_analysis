@@ -19,12 +19,12 @@ confirmed_data_rest = confirmed_data_rest.sum()
 confirmed_data_b = pd.concat([confirmed_data_cn, confirmed_data_rest], axis=1)
 confirmed_data_b.columns = ['China', 'The rest of the world']
 
-confirmed_data_b.plot(style=['-', '--'])
+confirmed_data_b.plot(style=['-', '--'], figsize=(6, 4))
 plt.xlabel('Date', fontsize=13)
 plt.ylabel('Confirmed Cases', fontsize=13)
 plt.legend(loc='upper left')
 plt.tight_layout()
-plt.savefig('png/Confirmed cases.png', dpi=300)
+plt.savefig('png/Confirmed cases.png', dpi=250)
 plt.show()
 
 plot_countries = ['Singapore', 'Italy', 'Japan', 'Korea, South']
@@ -35,9 +35,9 @@ for plot_country in plot_countries:
     aggre_data.append(s_data)
 confirmed_data_m = pd.concat(aggre_data, axis=1)
 confirmed_data_m.columns = plot_countries
-confirmed_data_m.iloc[25:, :].plot(style=plot_styles)
+confirmed_data_m.iloc[25:, :].plot(style=plot_styles, figsize=(6, 4))
 plt.xlabel('Date', fontsize=13)
 plt.ylabel('Confirmed Cases', fontsize=13)
 plt.tight_layout()
-plt.savefig('png/Confirmed Cases of Selected Countries.png', dpi=300)
+plt.savefig('png/Confirmed Cases of Selected Countries.png', dpi=250)
 plt.show()
