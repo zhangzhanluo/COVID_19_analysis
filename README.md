@@ -1,4 +1,4 @@
-# 2019_nCoV_analyze
+# COVID_19_analysis
 
 2019新型冠状病毒可视化分析项目。  
 A simple visualization program of 2019 n-CoV distribution.
