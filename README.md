@@ -21,13 +21,13 @@ Data acquisition, cleaning, and visualization are based on the packages of [requ
 
 ### 统计部分 Statistic Part
 
-![alt country confirmed](png/Cumulative%20Diagnosis.png)
+![alt country confirmed](png/Confirmed%20cases.png)
 
 ![alt Confirmed Cases of Selected Countries](png/Confirmed%20Cases%20of%20Selected%20Countries.png)
 
 ### 可视化部分 Visualization Part
 
-![alt Confirmed cases](png/Confirmed%20cases.png)
+![alt Confirmed cases](png/Cumulative%20Diagnosis.png)
 
 ![alt country current confirmed](png/Current%20Diagnosis.png)
 
